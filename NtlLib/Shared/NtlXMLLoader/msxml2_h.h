@@ -3,12 +3,12 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0626 */
-/* at Mon Jan 18 22:14:07 2038
+ /* File created by MIDL compiler version 8.01.0628 */
+/* at Tue Jan 19 04:14:07 2038
  */
 /* Compiler settings for MSXML Header Files\msxml2.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.01.0626 
-    protocol : dce , ms_ext, c_ext, robust
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0628 
+    protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
@@ -39,7 +39,7 @@
 #endif
 
 #ifndef DECLSPEC_XFGVIRT
-#if _CONTROL_FLOW_GUARD_XFG
+#if defined(_CONTROL_FLOW_GUARD_XFG)
 #define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
 #else
 #define DECLSPEC_XFGVIRT(base, func)
@@ -1117,16 +1117,22 @@ extern "C"{
 //  Copyright (C) Microsoft Corporation, 1997-1998.
 //
 //--------------------------------------------------------------------------
+#pragma external_header(push)
+#pragma external_header(push)
 #pragma warning(push)
 #pragma warning(disable:4001) 
 #pragma once
+#pragma external_header(push)
 #pragma warning(push)
 #pragma warning(disable:4001) 
 #pragma once
 #pragma warning(pop)
+#pragma external_header(pop)
 #pragma warning(pop)
+#pragma external_header(pop)
 #pragma region Desktop Family
 #pragma endregion
+#pragma external_header(pop)
 #define DOMDocument DOMDocument2
 #define CLSID_DOMDocument CLSID_DOMDocument2
 

@@ -52,8 +52,8 @@ void gm_read_command(sUG_SERVER_COMMAND* sPacket, CPlayer* pPlayer)
 	if (cmd_info[icmd].eAdminLevel > pPlayer->GetGMLevel()) //check if player gm level high enough to use command
 		return;
 
-	if (cmd_info[icmd].eAdminLevel > ADMIN_LEVEL_EARLY_ACCESS && pPlayer->IsGameMaster() == false)
-		return;
+	//if (cmd_info[icmd].eAdminLevel > ADMIN_LEVEL_EARLY_ACCESS && pPlayer->IsGameMaster() == false)
+	//	return;
 
 	//log
 	CNtlPacket packetQry(sizeof(sGQ_GM_LOG));
@@ -64,6 +64,8 @@ void gm_read_command(sUG_SERVER_COMMAND* sPacket, CPlayer* pPlayer)
 	strcpy(resQry->chBuffer, chBuffer);
 	packetQry.SetPacketLen(sizeof(sGQ_GM_LOG)); // to avoid having huge packet
 	app->SendTo(app->GetQueryServerSession(), &packetQry);
+
+	printf("Command USED");
 
 	((*cmd_info[icmd].command_pointer) (pPlayer, &lexer, iLine));
 }
